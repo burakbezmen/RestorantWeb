@@ -1,35 +1,4 @@
-[20:02, 18.01.2026] Sabri Sabri: 🚀 İlk Web Projemi Tamamladım!
-Merhaba LinkedIn ailesi! 👋
-
-Lise 11. sınıf öğrencisi olarak ilk web uygulama projemi başarıyla tamamladım ve sizlerle paylaşmak istedim.
-
-📌 Proje: Restoran Menü Yönetim Sistemi
-Bu projede bir restoranın menüsünü yönetebileceğiniz tam fonksiyonel bir web uygulaması geliştirdim.
-
-🛠️ Kullandığım Teknolojiler:
-ASP.NET Core MVC - Web framework
-C# - Backend programlama dili
-SQL Server - Veritabanı
-Dapper - Micro ORM (Object-Relational Mapping)
-Bootstrap 5 - Modern ve responsive UI tasarımı
-Bootstrap Icons - Görsel zenginlik
-✅ Projenin Özellikleri:
-CRUD İşlemleri (Create, Read, Update, Delete)
-Yeni menü ekleme
-Mevcut menüleri listeleme
-Menü güncelleme
-Menü silme
-Modern ve kullanıcı dostu arayüz
-Responsive tasarım
-💡 Bu projede öğrendiklerim:
-MVC mimarisi
-Veritabanı bağlantısı ve SQL sorguları
-Backend-Frontend entegrasyonu
-Kullanıcı arayüzü tasarımı
-Yazılım dünyasına ilk adımlarımı atıyorum ve öğrenmeye devam ediyorum. Geri bildirimlerinizi bekliyorum! 🙏
-
-#AspNetCore #CSharp #SQL #Dapper #Bootstrap #WebDevelopment #CRUD #İlkProje #Yazılım #LiseÖğrencisi #Coding #Programming
-[20:04, 18.01.2026] Sabri Sabri: # 🍽️ Restoran Menü Yönetim Sistemi
+ # 🍽️ Restoran Menü Yönetim Sistemi
 
 Lise 11. sınıf öğrencisi olarak geliştirdiğim ilk web uygulaması projesidir. Bu uygulama ile bir restoranın menüsünü kolayca yönetebilirsiniz.
 
