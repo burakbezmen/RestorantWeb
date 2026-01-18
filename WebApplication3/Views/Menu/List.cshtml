@@ -1,0 +1,149 @@
+﻿@model List<Menü>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menü Listesi - Restoran Yönetim Sistemi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.95) !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .main-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .table thead th {
+            border: none;
+            padding: 15px;
+            font-weight: 600;
+        }
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+            transition: all 0.2s;
+        }
+        .table tbody td {
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+        .btn-edit {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: none;
+            color: white;
+        }
+        .btn-edit:hover {
+            background: linear-gradient(135deg, #0d7d71 0%, #2bc466 100%);
+            color: white;
+        }
+        .btn-delete {
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            border: none;
+            color: white;
+        }
+        .btn-delete:hover {
+            background: linear-gradient(135deg, #c9202e 0%, #d94a3a 100%);
+            color: white;
+        }
+        .btn-add {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        .btn-add:hover {
+            background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+            color: white;
+        }
+        .page-title {
+            color: #333;
+            font-weight: 700;
+        }
+        .price-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-restaurant me-2"></i>Restoran Yönetim Sistemi
+            </a>
+        </div>
+    </nav>
+
+    <div class="container pb-5">
+        <div class="main-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="page-title mb-0">
+                    <i class="bi bi-list-ul me-2"></i>Menü Listesi
+                </h2>
+                <a href="/Menu/Create" class="btn btn-add">
+                    <i class="bi bi-plus-circle me-2"></i>Yeni Menü Ekle
+                </a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th><i class="bi bi-hash me-1"></i>ID</th>
+                            <th><i class="bi bi-egg-fried me-1"></i>Yemek Adı</th>
+                            <th><i class="bi bi-currency-lira me-1"></i>Fiyat</th>
+                            <th class="text-center">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var thismenu in Model)
+                        {
+                            <tr>
+                                <td><strong>#@thismenu.Id</strong></td>
+                                <td>@thismenu.YemekAdı</td>
+                                <td><span class="price-badge">@thismenu.Fiyat ₺</span></td>
+                                <td class="text-center">
+                                    <a href="/Menu/Update/@thismenu.Id" class="btn btn-edit btn-sm me-2">
+                                        <i class="bi bi-pencil-square me-1"></i>Güncelle
+                                    </a>
+                                    <a href="/Menu/Delete/@thismenu.Id" class="btn btn-delete btn-sm" onclick="return confirm('Bu menüyü silmek istediğinize emin misiniz?')">
+                                        <i class="bi bi-trash me-1"></i>Sil
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-4 text-muted text-center">
+                <small><i class="bi bi-info-circle me-1"></i>Toplam @Model.Count adet menü bulunmaktadır.</small>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
